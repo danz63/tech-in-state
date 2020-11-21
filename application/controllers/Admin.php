@@ -10,6 +10,6 @@ class Admin extends MY_Controller
             'user' => $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array(),
             'sidebar' => $this->getSideBar()
         ];
-        $this->load->view('admin/index', $data);
+        $this->load->view('backend/admin/index', $data);
     }
 }

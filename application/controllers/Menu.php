@@ -15,7 +15,7 @@ class Menu extends MY_Controller
                 'sidebar' => $this->getSideBar(),
                 'menu' => $this->db->get('menu')->result_array()
             ];
-            $this->load->view('menu/index', $data);
+            $this->load->view('backend/menu/index', $data);
         } else {
             $this->db->insert('menu', [
                 'menu' => $this->input->post('menu')
@@ -76,6 +76,6 @@ class Menu extends MY_Controller
             'submenu' => $this->menu->getSubMenu(),
             'menu' => $this->db->get('menu')->result_array()
         ];
-        $this->load->view('menu/submenu', $data);
+        $this->load->view('backend/menu/submenu', $data);
     }
 }

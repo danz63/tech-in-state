@@ -5,6 +5,7 @@ class Post extends MY_Controller
 {
     public function __construct()
     {
+        parent::__construct();
         // $this->load->;
     }
 
@@ -16,6 +17,6 @@ class Post extends MY_Controller
             'sidebar' => $this->getSideBar(),
             'menu' => $this->db->get('menu')->result_array()
         ];
-        $this->load->view('menu/index', $data);
+        $this->load->view('backend/menu/index', $data);
     }
 }

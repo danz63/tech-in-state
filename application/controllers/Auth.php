@@ -24,7 +24,7 @@ class Auth extends CI_Controller
                 'title' => 'Login Pengguna'
             ];
 
-            $this->load->view('auth/login', $data);
+            $this->load->view('backend/auth/login', $data);
         } else {
             $this->_login();
         }
@@ -48,7 +48,7 @@ class Auth extends CI_Controller
             $data = [
                 'title' => 'Registrasi Pengguna'
             ];
-            $this->load->view('auth/registration', $data);
+            $this->load->view('backend/auth/registration', $data);
         } else {
             $data = [
                 'name' => htmlspecialchars($this->input->post('name', true)),

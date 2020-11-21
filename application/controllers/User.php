@@ -11,7 +11,7 @@ class User extends MY_Controller
                   'user' => $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array(),
                   'sidebar' => $this->getSideBar()
             ];
-            $this->load->view('user/index', $data);
+            $this->load->view('backend/user/index', $data);
       }
 
       public function update()
