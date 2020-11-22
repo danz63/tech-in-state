@@ -12,10 +12,12 @@ class Auth extends CI_Controller
     }
     public function index()
     {
+        
         $this->form_validation->set_rules('email', 'Email', 'required|trim|valid_email', [
             'required' => $this->error . '"Email Harus Diisi!"',
             'valid_email' => $this->error . '"Format Email Tidak Valid!"'
         ]);
+        
         $this->form_validation->set_rules('password', 'Password', 'required|trim', [
             'required' => $this->error . '"Kata Sandi Harus Diisi!"'
         ]);
@@ -26,7 +28,9 @@ class Auth extends CI_Controller
 
             $this->load->view('backend/auth/login', $data);
         } else {
+            
             $this->_login();
+            
         }
     }
 

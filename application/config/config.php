@@ -403,9 +403,16 @@ $config['sess_regenerate_destroy'] = FALSE;
 */
 $config['cookie_prefix']    = '';
 $config['cookie_domain']    = '';
+<<<<<<< Updated upstream
 $config['cookie_path']        = '/';
 $config['cookie_secure']    = FALSE;
 $config['cookie_httponly']     = FALSE;
+=======
+$config['cookie_path']      = '/';
+$config['cookie_secure']    = FALSE;
+$config['cookie_httponly']  = FALSE;
+
+>>>>>>> Stashed changes
 /*
 |--------------------------------------------------------------------------
 | Standardize newlines
