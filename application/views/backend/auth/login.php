@@ -5,11 +5,11 @@ $err = [
 ];
 ?>
 <!-- Header -->
-<?php $this->load->view('backend/template/header', $title); ?>
+<?php $this->view('backend/template/header', $title); ?>
 
 <body class="bg-default">
     <!-- Top Auth -->
-    <?php $this->load->view('backend/template/top_auth'); ?>
+    <?php $this->view('backend/template/top_auth'); ?>
 
     <div class="container mt--9 pb-5">
         <div class="row justify-content-center">
@@ -58,4 +58,4 @@ $err = [
     </div>
 
     <!-- Footer -->
-    <?php $this->load->view('backend/template/footer'); ?>
+    <?php $this->view('backend/template/footer'); ?>

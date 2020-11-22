@@ -10,4 +10,13 @@ class Menu_Model extends CI_Model
         $this->db->join('menu', 'sub_menu.menu_id=menu.id');
         return $this->db->get()->result_array();
     }
+
+    public function insertMenu($data)
+    {
+        $data += [
+            'is_active' => 1
+        ];
+        $this->db->insert('sub_menu', $data);
+        return $this->db->affected_rows();
+    }
 }

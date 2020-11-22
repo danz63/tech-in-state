@@ -2,15 +2,15 @@
 $last_name = explode(' ', $user['name']);
 $last_name = $last_name[count($last_name) - 1];
 ?>
-<?php $this->load->view('backend/template/header', $title); ?>
+<?php $this->view('backend/template/header', $title); ?>
 
 <body>
       <!-- Sidenav -->
-      <?php $this->load->view('backend/dashboard/d_sidenav'); ?>
+      <?php $this->view('backend/dashboard/d_sidenav'); ?>
       <!-- Main content -->
       <div class="main-content" id="panel">
             <!-- Topnav -->
-            <?php $this->load->view('backend/dashboard/d_topnav', ['bg' => 'default']); ?>
+            <?php $this->view('backend/dashboard/d_topnav', ['bg' => 'default']); ?>
             <!-- Header -->
             <div class="header pb-6 d-flex align-items-center" style="min-height: 500px; background-image: url(<?= base_url('assets/img/dashboard/team.jpg') ?>); background-size: cover; background-position: center top;">
                   <!-- Mask -->
@@ -171,7 +171,7 @@ $last_name = $last_name[count($last_name) - 1];
                         </div>
                   </div>
                   <!-- Footer -->
-                  <?php $this->load->view('backend/dashboard/d_footer'); ?>
+                  <?php $this->view('backend/dashboard/d_footer'); ?>
             </div>
       </div>
-      <?php $this->load->view('backend/template/footer'); ?>
+      <?php $this->view('backend/template/footer'); ?>

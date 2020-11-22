@@ -1,14 +1,14 @@
-<?php $this->load->view('backend/template/header', $title); ?>
+<?php $this->view('backend/template/header', $title); ?>
 
 <body>
     <!-- Sidenav -->
-    <?php $this->load->view('backend/dashboard/d_sidenav', $sidebar); ?>
+    <?php $this->view('backend/dashboard/d_sidenav', $sidebar); ?>
     <!-- Main content -->
     <div class="main-content" id="panel">
         <!-- Topnav -->
-        <?php $this->load->view('backend/dashboard/d_topnav', ['bg' => 'default']); ?>
+        <?php $this->view('backend/dashboard/d_topnav', ['bg' => 'default']); ?>
         <!-- Header -->
-        <?php $this->load->view('backend/dashboard/d_header'); ?>
+        <?php $this->view('backend/dashboard/d_header'); ?>
         <!-- Page content -->
         <div class="container-fluid mt--6">
             <div class="row">
@@ -33,10 +33,10 @@
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-xl-12">
-                                    <?php if (form_error('submenu') !== '') : ?>
+                                    <?php if (validation_errors() !== '') : ?>
                                         <div class="alert alert-danger alert-dismissible fade show" role="alert" id="alert">
                                             <span class="alert-icon"><i class="ni ni-notification-70"></i></span>
-                                            <span class="alert-text"><strong>Error</strong>, <?= form_error('submenu') ?></span>
+                                            <span class="alert-text"><strong>Error</strong>, <?= validation_errors() ?></span>
                                             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                                 <span aria-hidden="true">&times;</span>
                                             </button>
@@ -77,10 +77,10 @@
                                                             <?= $sm['is_active']; ?>
                                                         </td>
                                                         <td>
-                                                            <a href="#" class="btn btn-sm btn-success buttonEditSubMenu" data-value="<?= $sm['id']; ?>">
+                                                            <!-- <a href="#" class="btn btn-sm btn-success buttonEditSubMenu" data-value="<?= $sm['id']; ?>">
                                                                 <i class="fas fa-fw fa-sm fa-edit"></i>
                                                                 Edit
-                                                            </a>
+                                                            </a> -->
                                                             <a href="#" class="btn btn-sm btn-danger btnDeleteSubMenu" data-value="<?= $sm['id']; ?>">
                                                                 <i class="fas fa-fw fa-sm fa-eraser"></i>
                                                                 Hapus
@@ -99,10 +99,10 @@
 
             </div>
             <!-- Footer -->
-            <?php $this->load->view('backend/dashboard/d_footer'); ?>
+            <?php $this->view('backend/dashboard/d_footer'); ?>
         </div>
     </div>
-    <?php $this->load->view('backend/template/footer'); ?>
+    <?php $this->view('backend/template/footer'); ?>
     <div class="modal fade" id="modal-form" tabindex="-1" role="dialog" aria-labelledby="modal-form" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-sm" role="document">
             <div class="modal-content">
@@ -111,6 +111,7 @@
                         <div class="card-header bg-transparent pb-5">
                             <h3 class="header-form">Tambah Submenu</h3>
                         </div>
+
                         <form role="form" method="POST" action="<?= base_url('menu/submenu') ?>" id="myform">
                             <div class="card-body">
                                 <div class="form-group mb-3">
@@ -120,17 +121,17 @@
                                                 <i class="ni ni-folder-17"></i>
                                             </span>
                                         </div>
-                                        <input class="form-control" placeholder="Submenu" type="text" name="submenu">
+                                        <input class="form-control" placeholder="Submenu" type="text" name="title">
                                     </div>
                                 </div>
                                 <div class="form-group mb-3">
                                     <div class="input-group input-group-merge input-group-alternative">
                                         <div class="input-group-prepend">
                                             <span class="input-group-text">
-                                                <i class=" ni ni-single-copy-04 "></i>
+                                                <i class=" ni ni-single-copy-04"></i>
                                             </span>
                                         </div>
-                                        <select class="form-control" name="submenu">
+                                        <select class="form-control" name="menu_id">
                                             <option disabled selected>-- Pilih Menu --</option>
                                             <?php foreach ($menu as $m) : ?>
                                                 <option value="<?= $m['id']; ?>"><?= $m['menu']; ?></option>
@@ -159,7 +160,6 @@
                                     </div>
                                 </div>
                             </div>
-                            <input type="hidden" name="id">
                             <div class="modal-footer">
                                 <button type="submit" class="btn btn-primary">Simpan</button>
                                 <button type="button" class="btn btn-link ml-auto" data-dismiss="modal">Batal</button>

@@ -1,14 +1,14 @@
-<?php $this->load->view('backend/template/header', $title); ?>
+<?php $this->view('backend/template/header', $title); ?>
 
 <body>
     <!-- Sidenav -->
-    <?php $this->load->view('backend/dashboard/d_sidenav', $sidebar); ?>
+    <?php $this->view('backend/dashboard/d_sidenav', $sidebar); ?>
     <!-- Main content -->
     <div class="main-content" id="panel">
         <!-- Topnav -->
-        <?php $this->load->view('backend/dashboard/d_topnav', ['bg' => 'default']); ?>
+        <?php $this->view('backend/dashboard/d_topnav', ['bg' => 'default']); ?>
         <!-- Header -->
-        <?php $this->load->view('backend/dashboard/d_header'); ?>
+        <?php $this->view('backend/dashboard/d_header'); ?>
         <!-- Page content -->
         <div class="container-fluid mt--6">
             <div class="row">
@@ -83,10 +83,10 @@
 
             </div>
             <!-- Footer -->
-            <?php $this->load->view('backend/dashboard/d_footer'); ?>
+            <?php $this->view('backend/dashboard/d_footer'); ?>
         </div>
     </div>
-    <?php $this->load->view('backend/template/footer'); ?>
+    <?php $this->view('backend/template/footer'); ?>
     <div class="modal fade" id="modal-form" tabindex="-1" role="dialog" aria-labelledby="modal-form" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-sm" role="document">
             <div class="modal-content">

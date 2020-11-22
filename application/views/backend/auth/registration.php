@@ -5,10 +5,10 @@ $err = [
     'password' => form_error('password') !== '' ? 'border border-danger' : ''
 ];
 ?>
-<?php $this->load->view('backend/template/header', $title); ?>
+<?php $this->view('backend/template/header', $title); ?>
 
 <body class="bg-default">
-    <?php $this->load->view('backend/template/top_auth'); ?>
+    <?php $this->view('backend/template/top_auth'); ?>
     <div class="container mt--9 pb-5">
         <div class="row justify-content-center">
             <div class="col-lg-5 col-md-7">
@@ -73,4 +73,4 @@ $err = [
             </div>
         </div>
     </div>
-    <?php $this->load->view('backend/template/footer'); ?>
+    <?php $this->view('backend/template/footer'); ?>
