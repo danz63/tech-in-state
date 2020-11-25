@@ -13,9 +13,9 @@
                         <hr class="my-3">
                         <?php foreach ($sidebar as $sb) : ?>
                               <!-- Nav Head Menu -->
-                              <h6 class="navbar-heading p-0 text-muted">
+                              <!-- <h6 class="navbar-heading p-0 text-muted">
                                     <span class="docs-normal"><?= $sb['title']; ?></span>
-                              </h6>
+                              </h6> -->
                               <ul class="navbar-nav">
                                     <!-- Nav items -->
                                     <?php foreach ($sb['submenu'] as $m) : ?>

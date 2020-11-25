@@ -12,6 +12,9 @@ class Auth extends CI_Controller
     }
     public function index()
     {
+        if ($this->session->userdata('email')) {
+            redirect("/user");
+        }
         $this->form_validation->set_rules('email', 'Email', 'required|trim|valid_email', [
             'required' => $this->error . '"Email Harus Diisi!"',
             'valid_email' => $this->error . '"Format Email Tidak Valid!"'
@@ -32,6 +35,9 @@ class Auth extends CI_Controller
 
     public function registration()
     {
+        if ($this->session->userdata('email')) {
+            redirect("/user");
+        }
         $this->form_validation->set_rules('name', 'Name', 'required|trim', [
             'required' => $this->error . '"Nama Harus Diisi!"'
         ]);
@@ -137,5 +143,11 @@ class Auth extends CI_Controller
             'text' => 'Silahkan kembali lagi nanti!'
         ]);
         redirect('/auth');
+    }
+
+    public function forbidden()
+    {
+        $data['title'] = '403 Forbidden';
+        $this->load->view('backend/auth/forbidden', $data);
     }
 }

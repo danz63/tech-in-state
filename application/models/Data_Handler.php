@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Menu_Model extends CI_Model
+class Data_Handler extends CI_Model
 {
     public function getSubMenu()
     {
@@ -18,5 +18,15 @@ class Menu_Model extends CI_Model
         ];
         $this->db->insert('sub_menu', $data);
         return $this->db->affected_rows();
+    }
+
+    public function getLastImage()
+    {
+        return $this->db->select('*')->order_by('created_at', "desc")->limit(5)->get('image')->result_array();
+    }
+
+    public function getCategories()
+    {
+        return $this->db->get("category")->result_array();
     }
 }

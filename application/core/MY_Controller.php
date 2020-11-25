@@ -7,15 +7,8 @@ class MY_Controller extends CI_Controller
     {
         parent::__construct();
         $this->load->library('form_validation');
-        if (!$this->session->userdata('email')) {
-            $this->session->set_flashdata('flash', [
-                'bg' => 'danger',
-                'title' => 'Peringatan',
-                'heading' => 'Menyalahi Aturan!',
-                'text' => 'Anda Harus Login Terlebig Dahulu!'
-            ]);
-            redirect('/');
-        }
+        $this->load->helper('self');
+        is_logged_in();
     }
 
     public function getSideBar()

@@ -52,7 +52,6 @@
                                                     <th scope="col">URL</th>
                                                     <th scope="col">Ikon</th>
                                                     <th scope="col">Status</th>
-                                                    <th scope="col">Aksi</th>
                                                 </tr>
                                             </thead>
                                             <tbody class="list">
@@ -74,17 +73,21 @@
                                                             <?= $sm['icon']; ?>
                                                         </td>
                                                         <td>
-                                                            <?= $sm['is_active']; ?>
-                                                        </td>
-                                                        <td>
                                                             <!-- <a href="#" class="btn btn-sm btn-success buttonEditSubMenu" data-value="<?= $sm['id']; ?>">
                                                                 <i class="fas fa-fw fa-sm fa-edit"></i>
                                                                 Edit
                                                             </a> -->
-                                                            <a href="#" class="btn btn-sm btn-danger btnDeleteSubMenu" data-value="<?= $sm['id']; ?>">
-                                                                <i class="fas fa-fw fa-sm fa-eraser"></i>
-                                                                Hapus
-                                                            </a>
+                                                            <?php if ($sm['is_active'] == 1) : ?>
+                                                                <button class="btn btn-sm btn-success btnToggleActivate" data-value="<?= $sm['id']; ?>" data-status="<?= $sm['is_active']; ?>" data-toggle="tooltip" data-placement="top" title="Nonaktifkan">
+                                                                    <i class="fas fa-fw fa-sm fa-check-circle"></i>
+                                                                    Aktif
+                                                                </button>
+                                                            <?php else : ?>
+                                                                <button class="btn btn-sm btn-danger btnToggleActivate" data-value="<?= $sm['id']; ?>" data-status="<?= $sm['is_active']; ?>" data-toggle="tooltip" data-placement="top" title="Aktifkan">
+                                                                    <i class="fas fa-fw fa-sm fa-times-circle"></i>
+                                                                    Nonaktif
+                                                                </button>
+                                                            <?php endif; ?>
                                                         </td>
                                                     </tr>
                                                 <?php endforeach; ?>
@@ -182,7 +185,7 @@
                 </div>
 
                 <div class="modal-body">
-                    <p class="header-form">Yakin menghapus data?</p>
+                    <p class="header-form confirm-message">Yakin menghapus data?</p>
                 </div>
                 <div class="modal-footer">
                     <a class="btn btn-primary" href="<?= base_url('/menu') ?>">Yakin</a>

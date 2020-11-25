@@ -26,12 +26,11 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- Light table -->
                         <div class="card-body">
-                            <form action="<?= base_url('post/create_post') ?>" method="POST" enctype="multipart/form-data">
+                            <form action="<?= base_url('article/create_article') ?>" method="POST" enctype="multipart/form-data">
                                 <div class="row">
+                                    <input type="hidden" name="str" value="<?= $randomString; ?>">
                                     <div class="col-xl-10 p-2 border">
-                                        <input type="hidden" name="str" value="<?= $randomString; ?>">
                                         <div class="custom-file my-1">
                                             <input type="file" class="custom-file-input" id="file0" name="image[]">
                                             <label class="custom-file-label" for="file0">Select file</label>
@@ -46,8 +45,8 @@
                                         </div>
                                         <div class="text-center mt-5">
                                             <button type="submit" class="btn btn-outline-primary">
-                                                <i class="fas fa-angle-right fa-2x"></i>
-                                                <span style="font-size:2em;">Next</span>
+                                                <i class="fas fa-angle-right"></i>
+                                                <span>Next</span>
                                             </button>
                                         </div>
                                     </div>

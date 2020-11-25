@@ -68,7 +68,7 @@ class Menu extends MY_Controller
 
     public function submenu()
     {
-        $this->load->model('Menu_Model', 'menu');
+        $this->load->model('Data_Handler', 'menu');
         $this->form_validation->set_rules('title', 'Title', 'required|trim', [
             'required' => 'Nama Submenu Harus Diisi!'
         ]);
@@ -110,15 +110,22 @@ class Menu extends MY_Controller
             redirect('menu/submenu');
         }
     }
-    public function delete_submenu($id)
+    public function toggle_active_submenu($id)
     {
+        $submenu = $this->db->get_where('sub_menu', ['id' => $id])->row_array();
         $this->db->where('id', $id);
-        $this->db->delete('sub_menu');
+        if ($submenu['is_active'] == 1) {
+            $this->db->update('sub_menu', ['is_active' => 0]);
+            $text = "Submenu Berhasil Dinonaktifkan";
+        } else {
+            $this->db->update('sub_menu', ['is_active' => 1]);
+            $text = "Submenu Berhasil Diaktifkan";
+        }
         $this->session->set_flashdata('flash', [
             'bg' => 'success',
             'title' => 'Sukses',
             'heading' => 'Sukses!',
-            'text' => 'Submenu Berhasil Dihapus'
+            'text' => $text
         ]);
         redirect('/menu/submenu');
     }

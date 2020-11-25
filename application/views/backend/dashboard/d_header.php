@@ -1,8 +1,3 @@
-<?php
-$split = explode('/', $_SERVER['REQUEST_URI']);
-$controller = $split[2];
-$method = !empty($split[3]) ? $split[3] : "index";
-?>
 <div class="header bg-gradient-default opacity-8 pb-6">
       <div class="container-fluid">
             <div class="header-body">
@@ -12,14 +7,14 @@ $method = !empty($split[3]) ? $split[3] : "index";
                               <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
                                     <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
                                           <li class="breadcrumb-item"><i class="fas fa-home"></i></li>
-                                          <li class="breadcrumb-item"><?= ucfirst($controller); ?></li>
-                                          <li class="breadcrumb-item active" aria-current="page"><?= ucfirst($method); ?></li>
+                                          <li class="breadcrumb-item"><?= ucfirst($this->uri->segment(1)); ?></li>
+                                          <li class="breadcrumb-item active" aria-current="page"><?= ucfirst(!empty($this->uri->segment(2)) ? $this->uri->segment(2) : "index"); ?></li>
                                     </ol>
                               </nav>
                         </div>
                   </div>
                   <!-- Card stats -->
-                  <?php if ($controller == 'admin') : ?>
+                  <?php if ($this->uri->segment(1) == 'admin') : ?>
                         <div class="row">
                               <div class="col-xl-3 col-md-6">
                                     <div class="card card-stats">
