@@ -29,4 +29,15 @@ class Data_Handler extends CI_Model
     {
         return $this->db->get("category")->result_array();
     }
+
+    public function setCategory($id, $category)
+    {
+        $query = "INSERT INTO article_category (article_id, category_id) VALUES ";
+        foreach ($category as $c) {
+            $query .= "(" . $id . "," . $c . "),";
+        }
+        $query = rtrim($query, ",");
+        $this->db->query($query);
+        return $this->db->affected_rows();
+    }
 }

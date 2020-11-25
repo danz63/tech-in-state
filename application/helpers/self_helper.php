@@ -28,3 +28,9 @@ function is_logged_in()
         }
     }
 }
+
+function getUser()
+{
+    $inc = get_instance();
+    return $inc->db->get_where('user', ['email' => $inc->session->userdata('email')])->row_array();
+}

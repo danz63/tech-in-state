@@ -12,9 +12,10 @@ class Article extends MY_Controller
     {
         $data = [
             'title' => 'Artikel',
-            'user' => $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array(),
+            'user' => getUser(),
             'sidebar' => $this->getSideBar(),
-            'menu' => $this->db->get('menu')->result_array()
+            'menu' => $this->db->get('menu')->result_array(),
+            'article' => $this->db->get('article')->result_array()
         ];
         $this->load->view('backend/article/index', $data);
     }
@@ -22,8 +23,8 @@ class Article extends MY_Controller
     public function insert_image()
     {
         $data = [
-            'title' => 'Artikel',
-            'user' => $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array(),
+            'title' => 'Upload Gambar',
+            'user' => getUser(),
             'sidebar' => $this->getSideBar(),
             'randomString' => parent::randString()
         ];
@@ -39,8 +40,8 @@ class Article extends MY_Controller
         }
         $this->load->model('Data_Handler', 'dataHandler');
         $data = [
-            'title' => 'Artikel',
-            'user' => $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array(),
+            'title' => 'Tulis Artikel',
+            'user' => getUser(),
             'sidebar' => $this->getSideBar(),
             'images' => $this->dataHandler->getLastImage(),
             'categories' => $this->dataHandler->getCategories()
@@ -50,8 +51,33 @@ class Article extends MY_Controller
 
     public function store_article()
     {
-        $this->form_validation->set_rules('title', 'Judul', 'required');
+        $this->form_validation->set_rules('title', 'Judul', 'required|trim');
         $this->form_validation->set_rules('content', 'Konten', 'required');
+        if ($this->form_validation->run() == true) {
+            $user = getUser();
+            $data = [
+                'title' => $this->input->post('title', true),
+                'content' => $this->input->post('content', true),
+                'created_at' => time(),
+                'created_by' => $user['id']
+            ];
+            $this->load->model('Data_Handler', 'dataHandler');
+            $this->db->insert('article', $data);
+            $statQuery1 = $this->db->affected_rows();
+            $last_id = $this->db->insert_id();
+            $statQuery2 = $this->dataHandler->setCategory($last_id, $this->input->post('categories'));
+            if ($statQuery1 > 0 && $statQuery2 > 0) {
+                $this->session->set_flashdata('flash', [
+                    'bg' => 'success',
+                    'title' => 'Sukses',
+                    'heading' => 'Sukses!',
+                    'text' => 'Artikel Berhasil Ditambahkan'
+                ]);
+                redirect('article/index');
+            } else {
+                echo "Gagal<br> Query1 : $statQuery1 <br>Query2 : $statQuery2";
+            }
+        }
     }
 
     public function upload_image()
