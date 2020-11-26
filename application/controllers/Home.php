@@ -1,12 +1,10 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Home extends MY_Controller
+class Home extends CI_Controller
 {
-
-      public function index()
-      {
-        $this->template->front_end('frontend/index');
-      }
-
+  public function index()
+  {
+    $this->template->front_end('frontend/index');
+  }
 }

@@ -44,7 +44,8 @@ class Article extends MY_Controller
             'user' => getUser(),
             'sidebar' => $this->getSideBar(),
             'images' => $this->dataHandler->getLastImage(),
-            'categories' => $this->dataHandler->getCategories()
+            'categories' => $this->dataHandler->getCategories(),
+            'series' => $this->db->get('series')->result_array()
         ];
         $this->load->view('backend/article/create_article', $data);
     }

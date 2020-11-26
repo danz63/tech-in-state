@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
      <title>Techinstate Media</title>
-<!-- 
+     <!-- 
 Hydro Template 
 http://www.templatemo.com/tm-509-hydro
 -->
@@ -21,9 +22,10 @@ http://www.templatemo.com/tm-509-hydro
      <!-- MAIN CSS -->
      <link rel="stylesheet" href="<?php echo base_url() ?>assets/front_end/css/templatemo-style.css">
 </head>
+
 <body>
-    <!-- PRE LOADER -->
-    <section class="preloader">
+     <!-- PRE LOADER -->
+     <section class="preloader">
           <div class="spinner">
                <span class="spinner-rotate"></span>
           </div>

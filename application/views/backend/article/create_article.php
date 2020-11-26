@@ -40,6 +40,20 @@
                                             </div>
                                         </div>
                                     <?php endforeach; ?>
+                                    <div class="col-6 col-md-4 col-xl-3 bg-secondary">
+                                        <div class="card">
+                                            <!-- <img class="card-img-top" src="<?= base_url('assets/img/dashboard/show.png') ?>" alt="Card image cap p-2 img-show-all"> -->
+
+                                            <div class="card-body">
+                                                <div class="p-2 text-center">
+                                                    <a class="btn" href="<?= base_url('article/show_all_image') ?>">
+                                                        <i class="fas fa-external-link-alt fa-7x text-muted"></i>
+                                                        <p class="pt-1 text-sm font-lobster">Tampilkan Semua</p>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                                 <form action="<?= base_url('article/store_article') ?>" method="POST">
                                     <div class="row">
@@ -49,7 +63,7 @@
                                                 <input class="form-control" type="text" name="title" id="title">
                                             </div>
                                             <div class="form-group">
-                                                <label class="d-block">Kategori</label>
+                                                <label class="d-block">Kategori Artikel</label>
                                                 <div class="form-control">
                                                     <?php foreach ($categories as $c) : ?>
                                                         <div class="custom-control custom-checkbox custom-control-inline">
@@ -58,6 +72,14 @@
                                                         </div>
                                                     <?php endforeach; ?>
                                                 </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="series">Seri Artikel</label>
+                                                <select name="series" id="series" class="form-control">
+                                                    <?php foreach ($series as $s) : ?>
+                                                        <option value="<?= $s['id']; ?>"><?= $s['seri']; ?></option>
+                                                    <?php endforeach; ?>
+                                                </select>
                                             </div>
                                             <div class="form-group">
                                                 <label for="title">Isi Artikel</label>
@@ -97,7 +119,7 @@
                     </button>
                 </div>
                 <div class="modal-body text-center">
-                    <img src="">
+                    <img src="" class="w-100">
                 </div>
             </div>
         </div>

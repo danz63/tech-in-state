@@ -120,6 +120,32 @@ $(".buttonEditCategory").on('click', function () {
 	$("#modal-form input[type=text]").focus();
 });
 
+$(".buttonEditSeries").on('click', function () {
+	let id = $(this).data("value");
+	let url = $(location).attr("href").replace("#", "");
+	url = url + "/getSeriById";
+	$.ajax({
+		type: 'ajax',
+		method: 'post',
+		data: {
+			id: id
+		},
+		url: url,
+		dataType: 'json',
+		success: function (response) {
+			$("input[name=seri]").val(response.seri);
+			$("input[name=id]").val(response.id);
+		}
+	});
+	$(".header-form").html("Ubah Seri");
+	$("button[type=submit]").html("Ubah");
+	let loc = $(location).attr("href").replace("#", "");
+	loc = loc + "/update";
+	$("#myform").attr("action", loc);
+	$("#modal-form").modal('show');
+	$("#modal-form input[type=text]").focus();
+});
+
 // ButtonModalImage
 $(".btnModal").on('click',function(){
 	let src = $(this).data('image');

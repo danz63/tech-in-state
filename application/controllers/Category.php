@@ -6,7 +6,7 @@ class Category extends MY_Controller
     public function index()
     {
         $this->form_validation->set_rules('category', 'Kategori', 'required|trim', [
-            'required' => 'Kategori Menu Harus Diisi!'
+            'required' => 'Kategori Artikel Harus Diisi!'
         ]);
         if ($this->form_validation->run() == false) {
             $data = [
@@ -50,5 +50,35 @@ class Category extends MY_Controller
             'text' => 'Kategori Berhasil Diubah'
         ]);
         redirect('/category');
+    }
+
+    public function index_series()
+    {
+        $this->form_validation->set_rules('seri', 'Seri', 'required|trim', [
+            'required' => 'Series Artikel Harus Diisi!'
+        ]);
+        if ($this->form_validation->run() == false) {
+            $data = [
+                'title' => 'Series',
+                'user' => $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array(),
+                'sidebar' => $this->getSideBar(),
+                'series' => $this->db->get('series')->result_array()
+            ];
+            $this->load->view('backend/series/index', $data);
+        } else {
+            $this->db->insert('series', ['seri' => $this->input->post('seri')]);
+            $this->session->set_flashdata('flash', [
+                'bg' => 'success',
+                'title' => 'Sukses',
+                'heading' => 'Sukses!',
+                'text' => 'Seri Berhasil Ditambahkan'
+            ]);
+            redirect('category/index_series');
+        }
+    }
+
+    public function getSeriById()
+    {
+        echo json_encode($this->db->get_where('series', ['id' => $this->input->post('id')])->row_array());
     }
 }

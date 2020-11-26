@@ -22,7 +22,7 @@
                                           <li class="nav-item <?= $m['title'] == $title ? 'active' : '' ?>">
                                                 <a class="nav-link" href="<?= base_url($m['url']) ?>">
                                                       <i class="<?= $m['icon']; ?>"></i>
-                                                      <span class="nav-link-text pt-1-2"><?= $m['title']; ?></span>
+                                                      <span class="nav-link-text"><?= $m['title']; ?></span>
                                                 </a>
                                           </li>
                                     <?php endforeach; ?>
@@ -33,7 +33,7 @@
                               <li class="nav-item">
                                     <a class="nav-link" data-toggle="modal" data-target="#modal-default" href="#">
                                           <i class="ni ni-button-power ni-lg text-danger"></i>
-                                          <span class="nav-link-text pt-1-2">Keluar</span>
+                                          <span class="nav-link-text">Keluar</span>
                                     </a>
                               </li>
                         </ul>
