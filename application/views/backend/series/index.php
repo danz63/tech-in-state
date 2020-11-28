@@ -32,11 +32,11 @@
                         <!-- Light table -->
                         <div class="card-body">
                             <div class="row">
-                                <div class="col-xl-5">
-                                    <?php if (form_error('category') !== '') : ?>
+                                <div class="col-xl-7">
+                                    <?php if (validation_errors() != "") : ?>
                                         <div class="alert alert-danger alert-dismissible fade show" role="alert" id="alert">
                                             <span class="alert-icon"><i class="ni ni-notification-70"></i></span>
-                                            <span class="alert-text"><strong>Error</strong>, <?= form_error('category') ?></span>
+                                            <span class="alert-text"><strong>Error !!!!</strong> <br><?= validation_errors() ?></span>
                                             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                                 <span aria-hidden="true">&times;</span>
                                             </button>
@@ -48,6 +48,7 @@
                                 <?php foreach ($series as $seri) : ?>
                                     <div class="col-xl-2 col-md-2 col-4">
                                         <div class="card" style="width: 10rem;">
+                                            <img class="card-img-top" src="<?= base_url('assets/img/picture/' . $seri['thumbnail']); ?>" alt="Card image cap" height="110">
                                             <div class="card-body">
                                                 <h5 class="card-title"><?= $seri['seri']; ?></h5>
                                                 <a href="#" class="btn btn-sm btn-success buttonEditSeries" data-value="<?= $seri['id']; ?>">
@@ -62,13 +63,11 @@
                         </div>
                     </div>
                 </div>
-
             </div>
             <!-- Footer -->
             <?php $this->view('backend/dashboard/d_footer'); ?>
         </div>
     </div>
-    <?php $this->view('backend/template/footer'); ?>
     <div class="modal fade" id="modal-form" tabindex="-1" role="dialog" aria-labelledby="modal-form" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-sm" role="document">
             <div class="modal-content">
@@ -97,7 +96,7 @@
                                             </span>
                                         </div>
                                         <div class="custom-file">
-                                            <input type="file" class="custom-file-input" id="thumbnail" name="thumbnail">
+                                            <input type="file" class="custom-file-input" id="thumbnail" name="image[]" style="z-index:-1;">
                                             <label class="custom-file-label" for="thumbnail">Pilih Thumbnail</label>
                                         </div>
                                     </div>
@@ -114,3 +113,10 @@
             </div>
         </div>
     </div>
+    <?php $this->view('backend/template/footer'); ?>
+    <script>
+        $('.custom-file-input').on('change', function() {
+            let fileName = $(this).val().split('\\').pop();
+            $(this).next('.custom-file-label').addClass('selected').html(fileName);
+        });
+    </script>

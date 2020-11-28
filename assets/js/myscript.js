@@ -49,11 +49,14 @@ $(".buttonEdit").on('click', function () {
 });
 
 $(document).on('hidden.bs.modal', '#modal-form', function () {
-	$(".header-form").html($(".header-form").html().replace("Ubah","Tambah"));
+	$(".header-form").html($(".header-form").html().replace("Ubah", "Tambah"));
 	$("button[type=submit]").html("Simpan");
 	$("input[type=text]").val("");
 	$("input[type=hidden]").val("");
 	$("#myform").attr("action", $(location).attr("href").replace("#", ""));
+	if($('#modal-form p.text-muted').length){
+		$('#modal-form p.text-muted').remove();
+	}
 });
 
 
@@ -86,7 +89,7 @@ $(".btnToggleActivate").on('click', function () {
 
 $(document).on('hidden.bs.modal', '#modal-delete-submenu', function () {
 	let url = $(location).attr("href").replace("#", "");
-	url = url.replace("/submenu","");
+	url = url.replace("/submenu", "");
 	$("#modal-delete-submenu .modal-footer a.btn-primary").attr("href", url);
 });
 
@@ -122,7 +125,8 @@ $(".buttonEditCategory").on('click', function () {
 
 $(".buttonEditSeries").on('click', function () {
 	let id = $(this).data("value");
-	let url = $(location).attr("href").replace("#", "");
+	let url = $(location).attr("href").replace("index_series", "");
+	url = url.replace("#", "");
 	url = url + "/getSeriById";
 	$.ajax({
 		type: 'ajax',
@@ -135,19 +139,20 @@ $(".buttonEditSeries").on('click', function () {
 		success: function (response) {
 			$("input[name=seri]").val(response.seri);
 			$("input[name=id]").val(response.id);
+			$("label.custom-file-label").html(response.thumbnail);
+			$("label.custom-file-label").parent().parent().after("<p class='text-muted text-sm'>Abaikan Jika Thumbnails tidak ingin Diganti</p>")
 		}
 	});
 	$(".header-form").html("Ubah Seri");
 	$("button[type=submit]").html("Ubah");
-	let loc = $(location).attr("href").replace("#", "");
-	loc = loc + "/update";
+	let loc = url.replace("/getSeriById","updateSeri");
 	$("#myform").attr("action", loc);
 	$("#modal-form").modal('show');
 	$("#modal-form input[type=text]").focus();
 });
 
 // ButtonModalImage
-$(".btnModal").on('click',function(){
+$(".btnModal").on('click', function () {
 	let src = $(this).data('image');
 	let name = $(this).data('title');
 	$("#modalLarge .modal-title").html(name);
@@ -155,9 +160,3 @@ $(".btnModal").on('click',function(){
 	$("#modalLarge").modal("show");
 });
 
-$('.custom-file-input').each(function(){
-	$(this).on('change',function(){
-		let fileName = $(this).val().split('\\').pop();
-		$(this).next('.custom-file-label').addClass('selected').html(fileName);
-	});
-});

@@ -65,7 +65,7 @@
                                             <div class="form-group">
                                                 <label>Thumbnail Artikel</label>
                                                 <div class="custom-file">
-                                                    <input type="file" class="custom-file-input" id="file0" name="image">
+                                                    <input type="file" class="custom-file-input" id="file0" name="image[]">
                                                     <label class="custom-file-label" for="file0">Select file</label>
                                                 </div>
                                                 <p class="my-3">Atau</p>

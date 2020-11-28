@@ -29,10 +29,9 @@
                         <div class="card-body">
                             <form action="<?= base_url('article/create_article') ?>" method="POST" enctype="multipart/form-data">
                                 <div class="row">
-                                    <input type="hidden" name="str" value="<?= $randomString; ?>">
                                     <div class="col-xl-10 p-2 border">
                                         <div class="custom-file my-1">
-                                            <input type="file" class="custom-file-input" id="file0" name="image[]" style="z-index : -1;">
+                                            <input type="file" class="custom-file-input" id="file0" name="image[]">
                                             <label class="custom-file-label" for="file0">Select file</label>
                                         </div>
                                     </div>
@@ -66,7 +65,7 @@
             num++;
             var str = `
             <div class="custom-file my-1">
-                <input type="file" class="custom-file-input" id="file` + num + `" name="image[]" style="z-index : -1;">
+                <input type="file" class="custom-file-input" id="file` + num + `" name="image[]">
                 <label class="custom-file-label" for="file` + num + `">Select file</label>
             </div>`;
             $(".card-body form .row .col-xl-10").append(str);
