@@ -154,3 +154,10 @@ $(".btnModal").on('click',function(){
 	$("#modalLarge .modal-body img").attr("src", src);
 	$("#modalLarge").modal("show");
 });
+
+$('.custom-file-input').each(function(){
+	$(this).on('change',function(){
+		let fileName = $(this).val().split('\\').pop();
+		$(this).next('.custom-file-label').addClass('selected').html(fileName);
+	});
+});

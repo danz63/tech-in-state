@@ -77,7 +77,7 @@
                         <div class="card-header bg-transparent pb-5">
                             <h3 class="header-form">Tambah Seri</h3>
                         </div>
-                        <form role="form" method="POST" action="<?= base_url('category/index_series') ?>" id="myform">
+                        <form role="form" method="POST" action="<?= base_url('category/index_series') ?>" id="myform" enctype="multipart/form-data">
                             <div class="card-body">
                                 <div class="form-group mb-3">
                                     <div class="input-group input-group-merge input-group-alternative">
@@ -87,6 +87,19 @@
                                             </span>
                                         </div>
                                         <input class="form-control" placeholder="Seri" type="text" name="seri">
+                                    </div>
+                                </div>
+                                <div class="form-group mb-3">
+                                    <div class="input-group input-group-merge input-group-alternative">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text">
+                                                <i class="ni ni-image"></i>
+                                            </span>
+                                        </div>
+                                        <div class="custom-file">
+                                            <input type="file" class="custom-file-input" id="thumbnail" name="thumbnail">
+                                            <label class="custom-file-label" for="thumbnail">Pilih Thumbnail</label>
+                                        </div>
                                     </div>
                                 </div>
                             </div>

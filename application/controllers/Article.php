@@ -55,10 +55,17 @@ class Article extends MY_Controller
         $this->form_validation->set_rules('title', 'Judul', 'required|trim');
         $this->form_validation->set_rules('content', 'Konten', 'required');
         if ($this->form_validation->run() == true) {
+            if ($_FILES['image']['error'] == 4) {
+                $thumbnail = $this->db->get_where('series', ['id' => $this->input->post('series')]);
+                $thumbnail = $thumbnail['thumbnail'];
+            } else {
+                $thumbnail = $this->upload_image(true);
+            }
             $user = getUser();
             $data = [
                 'title' => $this->input->post('title', true),
                 'content' => $this->input->post('content', true),
+                'thumbnail' => $thumbnail,
                 'created_at' => time(),
                 'created_by' => $user['id']
             ];
@@ -81,7 +88,21 @@ class Article extends MY_Controller
         }
     }
 
-    public function upload_image()
+
+    public function show_all_image()
+    {
+        $this->load->model('Data_Handler', 'dataHandler');
+        $data = [
+            'title' => 'Tulis Artikel',
+            'user' => getUser(),
+            'sidebar' => $this->getSideBar(),
+            'images' => $this->dataHandler->getAllImage()
+        ];
+        $this->load->view('backend/article/show_all_images', $data);
+    }
+
+
+    public function upload_image($ret = false)
     {
         for ($i = 0; $i < count($_FILES['image']['name']); $i++) {
             if ($_FILES['image']['name'][$i] == 0) {
@@ -94,7 +115,7 @@ class Article extends MY_Controller
                 $_FILES['file']['size']     = $_FILES['image']['size'][$i];
 
                 $config['upload_path']      = './assets/img/picture/';
-                $config['allowed_types']    = 'jpg|jpeg|png|gif';
+                $config['allowed_types']    = 'jpg|jpeg|png|gif|svg';
                 $config['max_size']         = str_replace("M", "000", ini_get('upload_max_filesize'));
                 $config['file_name']        = $name;
 
@@ -103,7 +124,10 @@ class Article extends MY_Controller
                     // Get data about the file
                     $uploadData = $this->upload->data();
                     $filename = $uploadData['file_name'];
-                    $this->db->insert('image', ['name' => $filename, 'created_at' => time()]);
+                    if (!$ret)
+                        $this->db->insert('image', ['name' => $filename, 'created_at' => time()]);
+                    else
+                        return $filename;
                 }
             }
         }

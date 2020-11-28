@@ -46,7 +46,7 @@
 
                                             <div class="card-body">
                                                 <div class="p-2 text-center">
-                                                    <a class="btn" href="<?= base_url('article/show_all_image') ?>">
+                                                    <a class="btn" href="<?= base_url('article/show_all_image') ?>" target="_blank">
                                                         <i class="fas fa-external-link-alt fa-7x text-muted"></i>
                                                         <p class="pt-1 text-sm font-lobster">Tampilkan Semua</p>
                                                     </a>
@@ -55,12 +55,24 @@
                                         </div>
                                     </div>
                                 </div>
-                                <form action="<?= base_url('article/store_article') ?>" method="POST">
+                                <form action="<?= base_url('article/store_article') ?>" method="POST" enctype="multipart/form-data">
                                     <div class="row">
                                         <div class="col">
                                             <div class="form-group">
                                                 <label for="title">Judul Artikel</label>
-                                                <input class="form-control" type="text" name="title" id="title">
+                                                <input class="form-control" type="text" name="title" id="title" placeholder="Judul">
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Thumbnail Artikel</label>
+                                                <div class="custom-file">
+                                                    <input type="file" class="custom-file-input" id="file0" name="image">
+                                                    <label class="custom-file-label" for="file0">Select file</label>
+                                                </div>
+                                                <p class="my-3">Atau</p>
+                                                <div class="custom-control custom-checkbox">
+                                                    <input type="checkbox" class="custom-control-input" id="checkbox1" name="checkboxseri">
+                                                    <label class="custom-control-label" for="checkbox1">Gunakan Thumbnails Seri</label>
+                                                </div>
                                             </div>
                                             <div class="form-group">
                                                 <label class="d-block">Kategori Artikel</label>

@@ -25,6 +25,11 @@ class Data_Handler extends CI_Model
         return $this->db->select('*')->order_by('created_at', "desc")->limit(5)->get('image')->result_array();
     }
 
+    public function getAllImage()
+    {
+        return $this->db->get('image')->result_array();
+    }
+
     public function getCategories()
     {
         return $this->db->get("category")->result_array();
