@@ -27,7 +27,7 @@
                             </div>
                         </div>
                         <div class="card-body">
-                            <form action="<?= base_url('article/create_article') ?>" method="POST" enctype="multipart/form-data">
+                            <form action="<?= base_url('article/store_image') ?>" method="POST" enctype="multipart/form-data">
                                 <div class="row">
                                     <div class="col-xl-10 p-2 border">
                                         <div class="custom-file my-1">

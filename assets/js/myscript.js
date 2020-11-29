@@ -125,9 +125,8 @@ $(".buttonEditCategory").on('click', function () {
 
 $(".buttonEditSeries").on('click', function () {
 	let id = $(this).data("value");
-	let url = $(location).attr("href").replace("index_series", "");
-	url = url.replace("#", "");
-	url = url + "/getSeriById";
+	let url = $(location).attr("href").replace("#", "");
+	url = url + "/getById";
 	$.ajax({
 		type: 'ajax',
 		method: 'post',
@@ -145,7 +144,7 @@ $(".buttonEditSeries").on('click', function () {
 	});
 	$(".header-form").html("Ubah Seri");
 	$("button[type=submit]").html("Ubah");
-	let loc = url.replace("/getSeriById","updateSeri");
+	let loc = url.replace("/getById","/update");
 	$("#myform").attr("action", loc);
 	$("#modal-form").modal('show');
 	$("#modal-form input[type=text]").focus();

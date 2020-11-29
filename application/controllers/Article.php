@@ -20,23 +20,8 @@ class Article extends MY_Controller
         $this->load->view('backend/article/index', $data);
     }
 
-    public function insert_image()
-    {
-        $data = [
-            'title' => 'Upload Gambar',
-            'user' => getUser(),
-            'sidebar' => $this->getSideBar()
-        ];
-        $this->load->view('backend/article/insert_image', $data);
-    }
-
     public function create_article()
     {
-        if (isset($_FILES['image'])) {
-            if ($_FILES['image']['error'][0] == 0) {
-                $this->upload_image();
-            }
-        }
         $this->load->model('Data_Handler', 'dataHandler');
         $data = [
             'title' => 'Tulis Artikel',
@@ -48,6 +33,7 @@ class Article extends MY_Controller
         ];
         $this->load->view('backend/article/create_article', $data);
     }
+
 
     public function store_article()
     {
@@ -86,6 +72,44 @@ class Article extends MY_Controller
                 echo "Gagal<br> Query1 : $statQuery1 <br>Query2 : $statQuery2";
             }
         }
+    }
+
+    //delete article
+    public function delete($id)
+    {
+        $this->db->where('id', $id);
+        $this->db->delete('article');
+        $this->db->where('article_id', $id);
+        $this->db->delete('article_category');
+        $this->session->set_flashdata('flash', [
+            'bg' => 'success',
+            'title' => 'Sukses',
+            'heading' => 'Sukses!',
+            'text' => 'Artikel Berhasil Dihapus'
+        ]);
+        redirect('/article');
+    }
+
+
+    public function insert_image()
+    {
+        $data = [
+            'title' => 'Upload Gambar',
+            'user' => getUser(),
+            'sidebar' => $this->getSideBar()
+        ];
+        $this->load->view('backend/article/insert_image', $data);
+    }
+
+
+    public function store_image()
+    {
+        if (isset($_FILES['image'])) {
+            if ($_FILES['image']['error'][0] == 0) {
+                $this->upload_image();
+            }
+        }
+        redirect('article/create_article');
     }
 
 

@@ -76,7 +76,7 @@
                         <div class="card-header bg-transparent pb-5">
                             <h3 class="header-form">Tambah Seri</h3>
                         </div>
-                        <form role="form" method="POST" action="<?= base_url('category/index_series') ?>" id="myform" enctype="multipart/form-data">
+                        <form role="form" method="POST" action="<?= base_url('series') ?>" id="myform" enctype="multipart/form-data">
                             <div class="card-body">
                                 <div class="form-group mb-3">
                                     <div class="input-group input-group-merge input-group-alternative">
