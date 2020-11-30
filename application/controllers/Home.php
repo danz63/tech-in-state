@@ -5,6 +5,14 @@ class Home extends CI_Controller
 {
   public function index()
   {
-    $this->template->front_end('frontend/index');
+    $this->load->view('front_end/home/index');
+  }
+  public function content()
+  {
+    $this->load->view('front_end/home/content');
+  }
+  public function list()
+  {
+    $this->load->view('front_end/home/list');
   }
 }

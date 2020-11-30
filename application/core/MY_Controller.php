@@ -11,6 +11,7 @@ class MY_Controller extends CI_Controller
         is_logged_in();
     }
 
+
     public function getSideBar()
     {
         $sideBar = [];
@@ -38,6 +39,7 @@ class MY_Controller extends CI_Controller
         return $sideBar;
     }
 
+
     public function randString()
     {
         $length = 5;
@@ -50,6 +52,7 @@ class MY_Controller extends CI_Controller
         return $randomString;
     }
 
+
     public function upload_image($ret = false)
     {
         for ($i = 0; $i < count($_FILES['image']['name']); $i++) {
@@ -61,17 +64,17 @@ class MY_Controller extends CI_Controller
                 $_FILES['file']['tmp_name'] = $_FILES['image']['tmp_name'][$i];
                 $_FILES['file']['error']    = $_FILES['image']['error'][$i];
                 $_FILES['file']['size']     = $_FILES['image']['size'][$i];
-                // var_dump($_FILES['file']);
-                // die;
                 $config['upload_path']      = './assets/img/picture/';
                 $config['allowed_types']    = 'jpg|jpeg|png|gif';
                 $config['max_size']         = str_replace("M", "000", ini_get('upload_max_filesize'));
                 $config['file_name']        = $name;
                 $this->load->library('upload', $config);
                 if ($this->upload->do_upload('file')) {
-                    // Get data about the file
+                    // Get data about the file it has been uploaded
                     $uploadData = $this->upload->data();
                     $filename = $uploadData['file_name'];
+
+                    // Check The Caller Is Request Response filename or want to insert in database
                     if ($ret == false) {
                         $this->db->insert('image', ['name' => $filename, 'created_at' => time()]);
                     } else {

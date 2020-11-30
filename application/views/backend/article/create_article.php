@@ -42,8 +42,6 @@
                                     <?php endforeach; ?>
                                     <div class="col-6 col-md-4 col-xl-3 bg-secondary">
                                         <div class="card">
-                                            <!-- <img class="card-img-top" src="<?= base_url('assets/img/dashboard/show.png') ?>" alt="Card image cap p-2 img-show-all"> -->
-
                                             <div class="card-body">
                                                 <div class="p-2 text-center">
                                                     <a class="btn" href="<?= base_url('article/show_all_image') ?>" target="_blank">

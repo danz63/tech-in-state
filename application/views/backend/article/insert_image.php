@@ -1,5 +1,4 @@
 <?php $this->view('backend/template/header', $title); ?>
-<?php $idfile = "file1"; ?>
 <script>
     var num = 0;
 </script>

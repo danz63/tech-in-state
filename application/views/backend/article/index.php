@@ -61,7 +61,7 @@
                                                             <?= substr(html_escape($m['content']), 0, 100); ?> ...
                                                         </td>
                                                         <td>
-                                                            <a href="#" class="btn btn-sm btn-success buttonEdit" data-value="<?= $m['id']; ?>">
+                                                            <a href="<?= base_url('article/edit_article/' . $m['id'])  ?>" class="btn btn-sm btn-success">
                                                                 <i class="fas fa-fw fa-sm fa-edit"></i>
                                                                 Edit
                                                             </a>
