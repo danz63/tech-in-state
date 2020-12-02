@@ -64,7 +64,7 @@ class MY_Controller extends CI_Controller
                 $_FILES['file']['tmp_name'] = $_FILES['image']['tmp_name'][$i];
                 $_FILES['file']['error']    = $_FILES['image']['error'][$i];
                 $_FILES['file']['size']     = $_FILES['image']['size'][$i];
-                $config['upload_path']      = './assets/img/picture/';
+                $config['upload_path']      = './assets/backend/img/picture/';
                 $config['allowed_types']    = 'jpg|jpeg|png|gif';
                 $config['max_size']         = str_replace("M", "000", ini_get('upload_max_filesize'));
                 $config['file_name']        = $name;

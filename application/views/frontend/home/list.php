@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html>
-<?php $this->view('front_end/template/_header'); ?>
+<?php $this->view('frontend/template/_header'); ?>
 
 <body>
     <div class="container-scroller">
         <div class="main-panel">
-            <?php $this->view('front_end/template/_navbar'); ?>
+            <?php $this->view('frontend/template/_navbar'); ?>
             <!-- partial -->
             <div class="content-wrapper">
                 <div class="container">
@@ -20,7 +20,7 @@
                                             </div>
                                             <div class="position-relative">
                                                 <div class="rotate-img">
-                                                    <img src="<?= base_url() ?>assets/images/dashboard/home_4.jpg" alt="thumb" class="img-fluid" />
+                                                    <img src="<?= base_url() ?>assets/frontend/images/dashboard/home_4.jpg" alt="thumb" class="img-fluid" />
                                                 </div>
                                                 <div class="badge-positioned">
                                                     <span class="badge badge-danger font-weight-bold">Flash news</span>
@@ -60,7 +60,7 @@
                                     <div class="d-flex justify-content-between align-items-center border-bottom pb-2">
                                         <div class="div-w-80 mr-3">
                                             <div class="rotate-img">
-                                                <img src="<?= base_url() ?>assets/images/dashboard/home_11.jpg" alt="thumb" class="img-fluid" />
+                                                <img src="<?= base_url() ?>assets/frontend/images/dashboard/home_11.jpg" alt="thumb" class="img-fluid" />
                                             </div>
                                         </div>
                                         <a href="" class="no-underline">
@@ -75,10 +75,10 @@
             </div>
             <!-- main-panel ends -->
             <!-- container-scroller ends -->
-            <?php $this->view('front_end/template/_footer'); ?>
+            <?php $this->view('frontend/template/_footer'); ?>
         </div>
     </div>
-    <?php $this->view('front_end/template/_script'); ?>
+    <?php $this->view('frontend/template/_script'); ?>
 </body>
 
 </html>

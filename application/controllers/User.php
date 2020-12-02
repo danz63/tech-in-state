@@ -21,7 +21,7 @@ class User extends MY_Controller
 
       public function doUpload()
       {
-            $config['upload_path']          = './assets/img/profile/';
+            $config['upload_path']          = './assets/backend/img/profile/';
             $config['allowed_types']        = 'jpg|png';
             $config['max_size']             = 100;
             $config['max_width']            = 1024;

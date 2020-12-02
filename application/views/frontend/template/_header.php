@@ -5,13 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>World Time</title>
     <!-- plugin css for this page -->
-    <link rel="stylesheet" href="<?= base_url() ?>assets/vendors/mdi/css/materialdesignicons.min.css" />
-    <link rel="stylesheet" href="<?= base_url() ?>assets/vendors/aos/dist/aos.css/aos.css" />
+    <link rel="stylesheet" href="<?= base_url() ?>assets/frontend/vendors/mdi/css/materialdesignicons.min.css" />
+    <link rel="stylesheet" href="<?= base_url() ?>assets/frontend/vendors/aos/dist/aos.css/aos.css" />
     <!-- End plugin css for this page -->
-    <link rel="shortcut icon" href="<?= base_url() ?>assets/images/favicon.png" />
+    <link rel="shortcut icon" href="<?= base_url() ?>assets/frontend/images/favicon.png" />
     <!-- inject:css -->
-    <link rel="stylesheet" href="<?= base_url() ?>assets/css/style.css">
-    <link rel="stylesheet" href="<?= base_url() ?>assets/css/mystyle.css">
+    <link rel="stylesheet" href="<?= base_url() ?>assets/frontend/css/style.css">
+    <link rel="stylesheet" href="<?= base_url() ?>assets/frontend/css/mystyle.css">
     <!-- endinject -->
 
 </head>

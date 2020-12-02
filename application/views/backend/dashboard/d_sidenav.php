@@ -3,7 +3,7 @@
             <!-- Brand -->
             <div class="sidenav-header  align-items-center">
                   <a class="navbar-brand" href="javascript:void(0)">
-                        <img src="<?= base_url() ?>/assets/img/icons/LogoText.png" class="navbar-brand-img" alt="...">
+                        <img src="<?= base_url() ?>/assets/backend/img/icons/LogoText.png" class="navbar-brand-img" alt="...">
                   </a>
             </div>
             <div class="navbar-inner">
@@ -12,10 +12,10 @@
                         <!-- Divider -->
                         <hr class="my-3">
                         <?php foreach ($sidebar as $sb) : ?>
-                              <!-- Nav Head Menu -->
-                              <!-- <h6 class="navbar-heading p-0 text-muted">
+                              <!-- Nav Head Menu  -->
+                              <h6 class="navbar-heading p-0 text-muted">
                                     <span class="docs-normal"><?= $sb['title']; ?></span>
-                              </h6> -->
+                              </h6>
                               <ul class="navbar-nav">
                                     <!-- Nav items -->
                                     <?php foreach ($sb['submenu'] as $m) : ?>

@@ -66,7 +66,7 @@ gulp.task("injectCommonAssets", function() {
 gulp.task("replacePath", function() {
   return gulp
     .src(["./pages/*.html"], { base: "./" })
-    .pipe(replace('src="assets/images', 'src="../assets/images'))
+    .pipe(replace('src="assets/frontend/images', 'src="../assets/frontend/images'))
     .pipe(replace('href="pages/', 'href="./'))
     .pipe(replace('href="index.html"', 'href="../index.html"'))
     .pipe(gulp.dest("."));

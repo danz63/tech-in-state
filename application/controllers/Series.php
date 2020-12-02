@@ -41,7 +41,7 @@ class Series extends MY_Controller
         ]);
         if ($_FILES['image']['error'][0] == 0) {
             $seri = $this->db->get_where('series', ['id' => $this->input->post('id')])->row_array();
-            $path = FCPATH . "/assets/img/picture/" . $seri['thumbnail'];
+            $path = FCPATH . "/assets/backend/img/picture/" . $seri['thumbnail'];
             unlink($path);
             $thumbnail = $this->upload_image(true);
             $this->db->set('thumbnail', $thumbnail);

@@ -48,7 +48,7 @@
                                 <?php foreach ($series as $seri) : ?>
                                     <div class="col-xl-2 col-md-2 col-4">
                                         <div class="card" style="width: 10rem;">
-                                            <img class="card-img-top" src="<?= base_url('assets/img/picture/' . $seri['thumbnail']); ?>" alt="Card image cap" height="110">
+                                            <img class="card-img-top" src="<?= base_url('assets/backend/img/picture/' . $seri['thumbnail']); ?>" alt="Card image cap" height="110">
                                             <div class="card-body">
                                                 <h5 class="card-title"><?= $seri['seri']; ?></h5>
                                                 <a href="#" class="btn btn-sm btn-success buttonEditSeries" data-value="<?= $seri['id']; ?>">

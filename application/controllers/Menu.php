@@ -68,7 +68,7 @@ class Menu extends MY_Controller
 
     public function submenu()
     {
-        $this->load->model('Data_Handler', 'menu');
+        $this->load->model('Data_Handler', 'dataHandler');
         $this->form_validation->set_rules('title', 'Title', 'required|trim', [
             'required' => 'Nama Submenu Harus Diisi!'
         ]);
@@ -86,30 +86,34 @@ class Menu extends MY_Controller
                 'title' => 'Manajemen Submenu',
                 'user' => $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array(),
                 'sidebar' => $this->getSideBar(),
-                'submenu' => $this->menu->getSubMenu(),
+                'submenu' => $this->dataHandler->getSubMenu(),
                 'menu' => $this->db->get('menu')->result_array()
             ];
             $this->load->view('backend/menu/submenu', $data);
         } else {
-            $res = $this->menu->insertMenu($this->input->post());
-            if ($res) {
-                $this->session->set_flashdata('flash', [
-                    'bg' => 'success',
-                    'title' => 'Sukses',
-                    'heading' => 'Sukses!',
-                    'text' => 'Submenu Berhasil Ditambahkan'
-                ]);
-            } else {
-                $this->session->set_flashdata('flash', [
-                    'bg' => 'danger',
-                    'title' => 'Error',
-                    'heading' => 'Error!',
-                    'text' => 'Submenu Gagal Ditambahkan'
-                ]);
-            }
+            $this->dataHandler->insertMenu($this->input->post());
+            $this->session->set_flashdata('flash', [
+                'bg' => 'success',
+                'title' => 'Sukses',
+                'heading' => 'Sukses!',
+                'text' => 'Submenu Berhasil Ditambahkan'
+            ]);
             redirect('menu/submenu');
         }
     }
+
+    // public function detail_submenu($id)
+    // {
+    //     $data = [
+    //         'title' => 'Manajemen Submenu',
+    //         'user' => $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array(),
+    //         'sidebar' => $this->getSideBar(),
+    //         'submenu' => $this->dataHandler->getSubMenu(),
+    //         'menu' => $this->db->get('menu')->result_array()
+    //     ];
+    //     $this->load->view('backend/menu/detail_submenu', $data);
+    // }
+
     public function toggle_active_submenu($id)
     {
         $submenu = $this->db->get_where('sub_menu', ['id' => $id])->row_array();

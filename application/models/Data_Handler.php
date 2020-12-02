@@ -57,11 +57,6 @@ class Data_Handler extends CI_Model
             $id_categories[] = $c['category_id'];
         }
         unset($data_categories);
-        // echo "<pre>";
-        // var_dump($id_categories);
-        // echo "</pre>";
-        // $id_categories = array_column($id_categories, 'article_id');
-        // die;
         $res = [
             'id' => $data['id'],
             'title' => $data['title'],
@@ -73,5 +68,60 @@ class Data_Handler extends CI_Model
             'id_categories' => $id_categories
         ];
         return $res;
+    }
+
+    public function setClassification($id_classification, $category)
+    {
+        $query = "INSERT INTO classification_category (classification_id, category_id) VALUES ";
+        foreach ($category as $c) {
+            $query .= "(" . $id_classification . "," . $c . "),";
+        }
+        $query = rtrim($query, ",");
+        $this->db->query($query);
+        return $this->db->affected_rows();
+    }
+
+    public function concatCategories()
+    {
+        $query = "SELECT a.id, a.classification_id, c.category FROM classification_category a JOIN category c ON a.category_id=c.id";
+        return $this->db->query($query)->result_array();
+    }
+
+    public function getClassById($id)
+    {
+        $data = $this->db->get_where('classification', ['id' => $id])->row_array();
+        $this->db->where('classification_id', $id);
+        $this->db->select('category_id');
+        $data_categories = $this->db->get('classification_category')->result_array();
+        $id_categories = [];
+        foreach ($data_categories as $c) {
+            $id_categories[] = $c['category_id'];
+        }
+        unset($data_categories);
+        $res = [
+            'id' => $data['id'],
+            'name' => $data['name'],
+            'is_active' => $data['is_active'],
+            'id_categories' => $id_categories
+        ];
+        return $res;
+    }
+
+    public function updateClass($data)
+    {
+        $this->db->where('classification_id', $data['id']);
+        $this->db->delete('classification_category');
+        $query = $this->setClassification($data['id'], $data['categories']);
+        $d = [
+            'name' => $data['name'],
+            'is_active' => $data['is_active']
+        ];
+        $this->db->where('id', $data['id']);
+        $this->db->update('classification', $d);
+        $query1 = $this->db->affected_rows();
+        if ($query > 0 && $query1 > 0) {
+            return true;
+        }
+        return false;
     }
 }

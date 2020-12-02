@@ -73,10 +73,6 @@
                                                             <?= $sm['icon']; ?>
                                                         </td>
                                                         <td>
-                                                            <!-- <a href="#" class="btn btn-sm btn-success buttonEditSubMenu" data-value="<?= $sm['id']; ?>">
-                                                                <i class="fas fa-fw fa-sm fa-edit"></i>
-                                                                Edit
-                                                            </a> -->
                                                             <?php if ($sm['is_active'] == 1) : ?>
                                                                 <button class="btn btn-sm btn-success btnToggleActivate" data-value="<?= $sm['id']; ?>" data-status="<?= $sm['is_active']; ?>" data-toggle="tooltip" data-placement="top" title="Nonaktifkan">
                                                                     <i class="fas fa-fw fa-sm fa-check-circle"></i>

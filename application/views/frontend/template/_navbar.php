@@ -6,7 +6,7 @@
                 <div class="d-flex justify-content-between align-items-center">
                     <ul class="navbar-top-left-menu">
                         <li class="nav-item">
-                            <a href="<?= base_url() ?>" class="navbar-brand"><img src="<?= base_url() ?>assets/images/logo.svg" alt="" /></a>
+                            <a href="<?= base_url() ?>" class="navbar-brand"><img src="<?= base_url() ?>assets/frontend/images/logo.svg" alt="" /></a>
                         </li>
                     </ul>
                     <ul class="navbar-top-right-menu">
@@ -27,31 +27,26 @@
             <div class="navbar-bottom">
                 <div class="d-flex justify-content-between align-items-center">
                     <div>
+                        <div class="d-none nav-logo">
+                            <a class="navbar-brand" href="#"><img src="<?= base_url() ?>assets/frontend/images/logo.svg" alt="" /></a>
+                        </div>
+                    </div>
+                    <div>
                         <button class="navbar-toggler" type="button" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon"></span>
                         </button>
                         <div class="navbar-collapse justify-content-center collapse" id="navbarSupportedContent">
-                            <div class="d-none nav-logo">
-                                <a class="navbar-brand" href="#"><img src="<?= base_url() ?>assets/images/logo.svg" alt="" />></a>
-                            </div>
                             <ul class="navbar-nav d-lg-flex justify-content-between align-items-center">
                                 <li>
                                     <button class="navbar-close">
                                         <i class="mdi mdi-close"></i>
                                     </button>
                                 </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="./magazine.html">News</a>
-                                </li>
-                                <li class="nav-item active">
-                                    <a class="nav-link" href="../index.html">Programming</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="./business.html">Networking</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="./sports.html">Design Multimedia</a>
-                                </li>
+                                <?php foreach ($topnav as $t) : ?>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="./magazine.html">News</a>
+                                    </li>
+                                <?php endforeach; ?>
                             </ul>
                         </div>
                     </div>

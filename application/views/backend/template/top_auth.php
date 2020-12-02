@@ -2,7 +2,7 @@
 <nav id="navbar-main" class="navbar navbar-horizontal navbar-transparent navbar-main navbar-expand-lg navbar-light">
       <div class="container">
             <a class="navbar-brand" href="dashboard.html">
-                  <img src="<?= base_url() ?>/assets/img/icons/LogoText.png">
+                  <img src="<?= base_url() ?>/assets/backend/img/icons/LogoText.png">
             </a>
       </div>
 </nav>

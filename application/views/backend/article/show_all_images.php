@@ -28,14 +28,14 @@
                                     <?php foreach ($images as $img) : ?>
                                         <div class="col-6 col-md-4 col-xl-3">
                                             <div class="card">
-                                                <img class="card-img-top" src="<?= base_url('assets/img/picture/' . $img['name']) ?>" alt="Card image cap">
+                                                <img class="card-img-top" src="<?= base_url('assets/backend/img/picture/' . $img['name']) ?>" alt="Card image cap">
                                                 <div class="card-body">
                                                     <h5 class="card-title">
-                                                        <button class="btn btn-sm btn-secondary btnCopy" data-clipboard-text="<?= base_url('assets/img/picture/' . $img['name']) ?>">
+                                                        <button class="btn btn-sm btn-secondary btnCopy" data-clipboard-text="<?= base_url('assets/backend/img/picture/' . $img['name']) ?>">
                                                             Copy To Clipboard
                                                         </button>
                                                     </h5>
-                                                    <button class="btn btn-sm btn-primary btnModal" data-image="<?= base_url('assets/img/picture/' . $img['name']) ?>" data-title="<?= $img['name']; ?>">Show Modal</button>
+                                                    <button class="btn btn-sm btn-primary btnModal" data-image="<?= base_url('assets/backend/img/picture/' . $img['name']) ?>" data-title="<?= $img['name']; ?>">Show Modal</button>
                                                 </div>
                                             </div>
                                         </div>
@@ -52,7 +52,7 @@
         </div>
     </div>
     <?php $this->view('backend/template/footer'); ?>
-    <script src="<?= base_url('assets/vendor/clipboard/dist/clipboard.min.js') ?>"></script>
+    <script src="<?= base_url('assets/backend/vendor/clipboard/dist/clipboard.min.js') ?>"></script>
     <script>
         new ClipboardJS('.btnCopy');
     </script>

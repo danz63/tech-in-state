@@ -12,7 +12,7 @@ $last_name = $last_name[count($last_name) - 1];
             <!-- Topnav -->
             <?php $this->view('backend/dashboard/d_topnav', ['bg' => 'default']); ?>
             <!-- Header -->
-            <div class="header pb-6 d-flex align-items-center" style="min-height: 500px; background-image: url(<?= base_url('assets/img/dashboard/team.jpg') ?>); background-size: cover; background-position: center top;">
+            <div class="header pb-6 d-flex align-items-center" style="min-height: 500px; background-image: url(<?= base_url('assets/backend/img/dashboard/team.jpg') ?>); background-size: cover; background-position: center top;">
                   <!-- Mask -->
                   <span class="mask bg-gradient-default opacity-8"></span>
                   <!-- Header container -->
@@ -30,12 +30,12 @@ $last_name = $last_name[count($last_name) - 1];
                   <div class="row">
                         <div class="col-xl-4 order-xl-2">
                               <div class="card card-profile">
-                                    <img src="<?= base_url('assets/img/dashboard/friendship.jpg') ?>" alt="Image placeholder" class="card-img-top">
+                                    <img src="<?= base_url('assets/backend/img/dashboard/friendship.jpg') ?>" alt="Image placeholder" class="card-img-top">
                                     <div class="row justify-content-center">
                                           <div class="col-lg-3 order-lg-2">
                                                 <div class="card-profile-image">
                                                       <a href="#">
-                                                            <img src="<?= base_url('assets/img/profile/') . $user['image'] ?>" class="rounded-circle">
+                                                            <img src="<?= base_url('assets/backend/img/profile/') . $user['image'] ?>" class="rounded-circle">
                                                       </a>
                                                 </div>
                                           </div>

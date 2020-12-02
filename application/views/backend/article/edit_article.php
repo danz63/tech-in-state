@@ -28,22 +28,20 @@
                                     <?php foreach ($images as $img) : ?>
                                         <div class="col-6 col-md-4 col-xl-3">
                                             <div class="card">
-                                                <img class="card-img-top" src="<?= base_url('assets/img/picture/' . $img['name']) ?>" alt="Card image cap">
+                                                <img class="card-img-top" src="<?= base_url('assets/backend/img/picture/' . $img['name']) ?>" alt="Card image cap">
                                                 <div class="card-body">
                                                     <h5 class="card-title">
-                                                        <button class="btn btn-sm btn-secondary btnCopy" data-clipboard-text="<?= base_url('assets/img/picture/' . $img['name']) ?>">
+                                                        <button class="btn btn-sm btn-secondary btnCopy" data-clipboard-text="<?= base_url('assets/backend/img/picture/' . $img['name']) ?>">
                                                             Copy To Clipboard
                                                         </button>
                                                     </h5>
-                                                    <button class="btn btn-sm btn-primary btnModal" data-image="<?= base_url('assets/img/picture/' . $img['name']) ?>" data-title="<?= $img['name']; ?>">Show Modal</button>
+                                                    <button class="btn btn-sm btn-primary btnModal" data-image="<?= base_url('assets/backend/img/picture/' . $img['name']) ?>" data-title="<?= $img['name']; ?>">Show Modal</button>
                                                 </div>
                                             </div>
                                         </div>
                                     <?php endforeach; ?>
                                     <div class="col-6 col-md-4 col-xl-3 bg-secondary">
                                         <div class="card">
-                                            <!-- <img class="card-img-top" src="<?= base_url('assets/img/dashboard/show.png') ?>" alt="Card image cap p-2 img-show-all"> -->
-
                                             <div class="card-body">
                                                 <div class="p-2 text-center">
                                                     <a class="btn" href="<?= base_url('article/show_all_image') ?>" target="_blank">
@@ -96,7 +94,7 @@
                                             </div>
                                             <div class="form-group">
                                                 <p>Thumbnail Artikel saat ini</p>
-                                                <img src="<?= base_url('assets/img/picture/' . $category['thumbnail']) ?>" id="picture" width="128" class="img-thumbnail pb-2">
+                                                <img src="<?= base_url('assets/backend/img/picture/' . $category['thumbnail']) ?>" id="picture" width="128" class="img-thumbnail pb-2">
                                             </div>
                                             <div class="form-group">
                                                 <label for="title">Isi Artikel</label>
@@ -117,8 +115,8 @@
         </div>
     </div>
     <?php $this->view('backend/template/footer'); ?>
-    <script src="<?= base_url('assets/vendor/clipboard/dist/clipboard.min.js') ?>"></script>
-    <script src="<?= base_url('assets/vendor/ckeditor/ckeditor.js') ?>"></script>
+    <script src="<?= base_url('assets/backend/vendor/clipboard/dist/clipboard.min.js') ?>"></script>
+    <script src="<?= base_url('assets/backend/vendor/ckeditor/ckeditor.js') ?>"></script>
     <script>
         new ClipboardJS('.btnCopy');
         CKEDITOR.replace('content', {

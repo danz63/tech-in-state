@@ -19,19 +19,15 @@
     <meta name="author" content="Creative Tim">
     <title><?= $title; ?></title>
     <!-- Favicon -->
-    <link rel="icon" href="<?= base_url('assets/img/brand/favicon.png') ?>" type="image/png">
-    <!-- Fonts -->
-    <!-- <link rel="preconnect" href="https://fonts.gstatic.com"> -->
-    <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700"> -->
-    <link rel="stylesheet" href="<?= base_url('assets/fonts/lobster/lobster.css') ?>">
-    <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lobster&display=swap"> -->
-    <link rel="stylesheet" href="<?= base_url('assets/fonts/opensans/opensans.css') ?>">
+    <link rel="icon" href="<?= base_url('assets/backend/img/brand/favicon.png') ?>" type="image/png">
+    <link rel="stylesheet" href="<?= base_url('assets/backend/fonts/lobster/lobster.css') ?>">
+    <link rel="stylesheet" href="<?= base_url('assets/backend/fonts/opensans/opensans.css') ?>">
     <!-- Icons -->
-    <link rel="stylesheet" href="<?= base_url('assets/vendor/@fortawesome/fontawesome-free/css/all.min.css') ?>" type="text/css">
-    <link rel="stylesheet" href="<?= base_url('assets/vendor/nucleo/css/nucleo.css') ?>" type="text/css">
+    <link rel="stylesheet" href="<?= base_url('assets/backend/vendor/@fortawesome/fontawesome-free/css/all.min.css') ?>" type="text/css">
+    <link rel="stylesheet" href="<?= base_url('assets/backend/vendor/nucleo/css/nucleo.css') ?>" type="text/css">
     <!-- Argon CSS -->
-    <!-- <link rel="stylesheet" href="<?= base_url('assets/css/argon.css') ?>" type="text/css"> -->
+    <!-- <link rel="stylesheet" href="<?= base_url('assets/backend/css/argon.css') ?>" type="text/css"> -->
 
     <!-- Editable CSS -->
-    <link rel="stylesheet" href="<?= base_url('assets/css/mystyle.css') ?>" type="text/css">
+    <link rel="stylesheet" href="<?= base_url('assets/backend/css/mystyle.css') ?>" type="text/css">
 </head>

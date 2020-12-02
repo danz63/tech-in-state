@@ -159,3 +159,15 @@ $(".btnModal").on('click', function () {
 	$("#modalLarge").modal("show");
 });
 
+$("#switch").change(function(){
+
+	if($(this).prop('checked')==true){
+		$("#is_active").val("1");
+		$(this).next().html("Aktif");
+	}else{
+		$("#is_active").val("0");
+		$(this).next().html("Nonaktif");
+	}
+});
+
+

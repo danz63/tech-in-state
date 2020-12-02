@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html>
-<?php $this->view('front_end/template/_header'); ?>
+<?php $this->view('frontend/template/_header'); ?>
 
 <body>
     <div class="container-scroller">
         <div class="main-panel">
-            <?php $this->view('front_end/template/_navbar'); ?>
+            <?php $this->view('frontend/template/_navbar'); ?>
             <!-- partial -->
             <div class="content-wrapper">
                 <div class="d-block mx-5">
@@ -36,7 +36,7 @@
                                                 <!-- End Of Head Content -->
 
                                                 <!-- Thumbnail Article -->
-                                                <img src="<?= base_url() ?>assets/images/logos/html.png" alt="banner" class="img-fluid h-100 rounded featured-image" style="object-fit: none;" />
+                                                <img src="<?= base_url() ?>assets/frontend/images/logos/html.png" alt="banner" class="img-fluid h-100 rounded featured-image" style="object-fit: none;" />
 
                                                 <!-- Content Article -->
                                                 <div class="article-post">
@@ -53,7 +53,7 @@
 
                                                 <div class="row">
                                                     <div class="col-12 text-center rotate-img">
-                                                        <img src="<?= base_url() ?>assets/images/logos/php.png" class="img-thumbnail" alt="...">
+                                                        <img src="<?= base_url() ?>assets/frontend/images/logos/php.png" class="img-thumbnail" alt="...">
                                                     </div>
                                                     <div class="col-12 px-5 py-2">
                                                         <small class="text-sm">29-Nov-20, Oleh Admin</small>
@@ -65,7 +65,7 @@
                                                 <div class="divider"></div>
                                                 <div class="row">
                                                     <div class="col-12 text-center rotate-img">
-                                                        <img src="<?= base_url() ?>assets/images/logos/mysql.png" class="img-thumbnail" alt="...">
+                                                        <img src="<?= base_url() ?>assets/frontend/images/logos/mysql.png" class="img-thumbnail" alt="...">
                                                     </div>
                                                     <div class="col-12 px-5 py-2">
                                                         <small class="text-sm">29-Nov-20, Oleh Admin</small>
@@ -96,10 +96,10 @@
                     </div>
                 </div>
             </div>
-            <?php $this->view('front_end/template/_footer'); ?>
+            <?php $this->view('frontend/template/_footer'); ?>
         </div>
     </div>
-    <?php $this->view('front_end/template/_script'); ?>
+    <?php $this->view('frontend/template/_script'); ?>
 
 </body>
 

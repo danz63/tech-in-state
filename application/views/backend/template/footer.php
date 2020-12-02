@@ -1,16 +1,16 @@
 <!-- Argon Scripts -->
 <!-- Core -->
-<script src="<?= base_url('assets/vendor/jquery/dist/jquery.min.js') ?>"></script>
-<script src="<?= base_url('assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js') ?>"></script>
-<!-- <script src="<?= base_url('assets/vendor/js-cookie/js.cookie.js') ?>"></script> -->
-<script src="<?= base_url('assets/vendor/jquery.scrollbar/jquery.scrollbar.min.js') ?>"></script>
-<script src="<?= base_url('assets/vendor/jquery-scroll-lock/dist/jquery-scrollLock.min.js') ?>"></script>
-<script src="<?= base_url('assets/vendor/chart.js/dist/Chart.min.js') ?>"></script>
-<script src="<?= base_url('assets/vendor/chart.js/dist/Chart.extension.js') ?>"></script>
+<script src="<?= base_url('assets/backend/vendor/jquery/dist/jquery.min.js') ?>"></script>
+<script src="<?= base_url('assets/backend/vendor/bootstrap/dist/js/bootstrap.bundle.min.js') ?>"></script>
+<!-- <script src="base_url('assets/backend/vendor/js-cookie/js.cookie.js') "></script> -->
+<script src="<?= base_url('assets/backend/vendor/jquery.scrollbar/jquery.scrollbar.min.js') ?>"></script>
+<script src="<?= base_url('assets/backend/vendor/jquery-scroll-lock/dist/jquery-scrollLock.min.js') ?>"></script>
+<script src="<?= base_url('assets/backend/vendor/chart.js/dist/Chart.min.js') ?>"></script>
+<script src="<?= base_url('assets/backend/vendor/chart.js/dist/Chart.extension.js') ?>"></script>
 <!-- Argon JS -->
-<script src="<?= base_url('assets/js/argon.js') ?>"></script>
+<script src="<?= base_url('assets/backend/js/argon.js') ?>"></script>
 <!-- Editable script js -->
-<script src="<?= base_url('assets/js/myscript.js') ?>"></script>
+<script src="<?= base_url('assets/backend/js/myscript.js') ?>"></script>
 
 <!-- Modal Notofication -->
 <?php if ($this->session->flashdata('flash') != NULL) : ?>
