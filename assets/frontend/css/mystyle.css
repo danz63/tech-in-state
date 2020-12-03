@@ -1,100 +1,100 @@
 @import 'style.css';
 
 .no-underline {
-    text-decoration: none !important;
+	text-decoration: none !important;
 }
 
 .img-thumbnail {
-    max-width: 128px;
-    max-height: 128px;
-    border: 0px;
+	max-width: 128px;
+	max-height: 128px;
+	border: 0px;
 }
 
 .divider {
-    height: 0;
-    margin: .5rem 1rem;
-    overflow: hidden;
-    border-top: 1px solid #e9ecef;
+	height: 0;
+	margin: .5rem 1rem;
+	overflow: hidden;
+	border-top: 1px solid #e9ecef;
 }
 
 .post-top-meta {
-    margin-bottom: 2rem;
+	margin-bottom: 2rem;
 }
 
 .post-top-meta .btn.follow {
-    margin-left: 5px;
-    margin-top: -4px;
+	margin-left: 5px;
+	margin-top: -4px;
 }
 
 .btn.follow {
-    border-color: #02B875;
-    color: #1C9963;
-    padding: 3px 10px;
-    text-align: center;
-    border-radius: 999em;
-    font-size: 0.85rem;
-    display: inline-block;
+	border-color: #02B875;
+	color: #1C9963;
+	padding: 3px 10px;
+	text-align: center;
+	border-radius: 999em;
+	font-size: 0.85rem;
+	display: inline-block;
 }
 
 .post-top-meta .author-description {
-    margin-bottom: 5px;
-    margin-top: 5px;
-    font-size: 0.95rem;
+	margin-bottom: 5px;
+	margin-top: 5px;
+	font-size: 0.95rem;
 }
 
 .post-top-meta span {
-    font-size: 0.9rem;
-    color: rgba(0, 0, 0, .44);
-    display: inline-block;
+	font-size: 0.9rem;
+	color: rgba(0, 0, 0, .44);
+	display: inline-block;
 }
 
 .post-top-meta .author-thumb {
-    width: 72px;
-    height: 72px;
+	width: 72px;
+	height: 72px;
 }
 
 .author-thumb {
-    width: 40px;
-    height: 40px;
-    margin: 1rem auto;
-    margin-right: 13px;
-    border-radius: 100%;
+	width: 40px;
+	height: 40px;
+	margin: 1rem auto;
+	margin-right: 13px;
+	border-radius: 100%;
 }
 
 .dot::after {
-    content: "·";
-    margin-left: 3px;
-    margin-right: 3px;
+	content: "·";
+	margin-left: 3px;
+	margin-right: 3px;
 }
 
 span.post-date,
 span.post-read {
-    color: rgba(0, 0, 0, .44);
+	color: rgba(0, 0, 0, .44);
 }
 
 .mainheading {
-    padding: 1rem 0rem;
+	padding: 1rem 0rem;
 }
 
 .mainheading h1.posttitle {
-    font-weight: 700;
-    margin-bottom: 1rem;
+	font-weight: 700;
+	margin-bottom: 1rem;
 }
 
 .featured-image {
-    display: block;
-    margin: 0px auto;
-    margin-bottom: 1.5rem;
+	display: block;
+	margin: 0px auto;
+	margin-bottom: 1.5rem;
 }
 
 .article-post {
-    font-family: Merriweather;
-    font-size: 2rem;
-    line-height: 1.8;
-    color: rgba(0, 0, 0, .8);
+	font-family: Merriweather;
+	font-size: 2rem;
+	line-height: 1.8;
+	color: rgba(0, 0, 0, .8);
 }
 
 .article-post p,
 .article-post blockquote {
-    margin: 0 0 1.5rem 0;
+	margin: 0 0 1.5rem 0;
 }

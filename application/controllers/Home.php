@@ -13,16 +13,27 @@ class Home extends CI_Controller
   {
     $data = [
       'topnav' => $this->M_Home->getTopNav(),
+      'subtopnav' => $this->M_Home->getSubTopNav(),
       'title' => "TechInState"
     ];
     $this->load->view('frontend/home/index', $data);
   }
   public function content()
   {
-    $this->load->view('frontend/home/content');
+    $data = [
+      'topnav' => $this->M_Home->getTopNav(),
+      'subtopnav' => $this->M_Home->getSubTopNav(),
+      'title' => "TechInState"
+    ];
+    $this->load->view('frontend/home/content', $data);
   }
   public function list()
   {
-    $this->load->view('frontend/home/list');
+    $data = [
+      'topnav' => $this->M_Home->getTopNav(),
+      'subtopnav' => $this->M_Home->getSubTopNav(),
+      'title' => "TechInState"
+    ];
+    $this->load->view('frontend/home/list', $data);
   }
 }

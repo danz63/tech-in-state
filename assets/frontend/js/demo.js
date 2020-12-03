@@ -16,10 +16,8 @@ $(function() {
     // adding sticky class
     if (window.pageYOffset > 130) {
       $(header).addClass("sticky");
-      $(".nav-logo").removeClass("d-none");
     } else {
       // removing sticky class
-      $(".nav-logo").addClass("d-none");
       $(header).removeClass("sticky");
     }
   }

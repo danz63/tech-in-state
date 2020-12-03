@@ -3,7 +3,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>World Time</title>
+    <title><?= $title; ?></title>
     <!-- plugin css for this page -->
     <link rel="stylesheet" href="<?= base_url() ?>assets/frontend/vendors/mdi/css/materialdesignicons.min.css" />
     <link rel="stylesheet" href="<?= base_url() ?>assets/frontend/vendors/aos/dist/aos.css/aos.css" />
