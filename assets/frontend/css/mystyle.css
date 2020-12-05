@@ -98,3 +98,8 @@ span.post-read {
 .article-post blockquote {
 	margin: 0 0 1.5rem 0;
 }
+
+.article-post ul,
+.article-post .code-toolbar {
+	font-size: 15px;
+}

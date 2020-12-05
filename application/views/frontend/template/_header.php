@@ -7,10 +7,11 @@
     <!-- plugin css for this page -->
     <link rel="stylesheet" href="<?= base_url() ?>assets/frontend/vendors/mdi/css/materialdesignicons.min.css" />
     <link rel="stylesheet" href="<?= base_url() ?>assets/frontend/vendors/aos/dist/aos.css/aos.css" />
+
+    <link rel="stylesheet" href="<?= base_url() ?>assets/frontend/vendors/prismjs/prism.css" />
     <!-- End plugin css for this page -->
     <link rel="shortcut icon" href="<?= base_url() ?>assets/frontend/images/favicon.png" />
     <!-- inject:css -->
-    <link rel="stylesheet" href="<?= base_url() ?>assets/frontend/css/style.css">
     <link rel="stylesheet" href="<?= base_url() ?>assets/frontend/css/mystyle.css">
     <!-- endinject -->
 

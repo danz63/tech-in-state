@@ -2,7 +2,7 @@
     <div class="footer-top">
         <div class="container">
             <div class="row">
-                <div class="col-xl-6 col-md-6 col">
+                <div class="col-xl-12 col-md-12 col">
                     <img src="<?= base_url() ?>assets/frontend/images/logo.svg" class="footer-logo" alt="" />
                     <h5 class="font-weight-normal mt-4 mb-5">
                         Tech-In-States Adalah Komunitas Untuk Content Creator untuk menuangkan kreasinya dalam bidang Information & Techno. Khususnya dalam bidang Pemrograman
@@ -24,8 +24,6 @@
                             </a>
                         </li>
                     </ul>
-                </div>
-                <div class="col-xl-6 col-md-6 col">
                 </div>
             </div>
         </div>

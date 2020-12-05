@@ -12,27 +12,47 @@ class Home extends CI_Controller
   public function index()
   {
     $data = [
-      'topnav' => $this->M_Home->getTopNav(),
-      'subtopnav' => $this->M_Home->getSubTopNav(),
-      'title' => "TechInState"
+      'title' => "TechInState",
+      'article' => $this->M_Home->getArticle(),
+      'series' => $this->db->get('series')->result_array()
     ];
     $this->load->view('frontend/home/index', $data);
   }
-  public function content()
+
+  public function read($id)
   {
     $data = [
-      'topnav' => $this->M_Home->getTopNav(),
-      'subtopnav' => $this->M_Home->getSubTopNav(),
-      'title' => "TechInState"
+      'article' => $this->M_Home->getArticleById($id)
     ];
     $this->load->view('frontend/home/content', $data);
   }
+
   public function list()
   {
     $data = [
-      'topnav' => $this->M_Home->getTopNav(),
-      'subtopnav' => $this->M_Home->getSubTopNav(),
-      'title' => "TechInState"
+      'title' => "TechInState",
+      'series' => $this->db->get('series')->result_array()
+    ];
+    $this->load->view('frontend/home/list', $data);
+  }
+
+  public function category($id_category)
+  {
+    $category = $this->db->get_where('category', ['id' => $id_category])->row_array();
+    $data = [
+      'article' => $this->M_Home->getArticleByCategory($id_category),
+      'title' => "Artikel Tentang " . $category['category'],
+      'series' => $this->db->get('series')->result_array()
+    ];
+    $this->load->view('frontend/home/list', $data);
+  }
+  public function series($id_series)
+  {
+    $series = $this->db->get_where('series', ['id' => $id_series])->row_array();
+    $data = [
+      'article' => $this->M_Home->getArticleBySeries($id_series),
+      'title' => "Artikel " . $series['seri'],
+      'series' => $this->db->get('series')->result_array()
     ];
     $this->load->view('frontend/home/list', $data);
   }

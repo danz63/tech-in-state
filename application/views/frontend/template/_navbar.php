@@ -21,13 +21,13 @@
                                         <i class="mdi mdi-close"></i>
                                     </button>
                                 </li>
-                                <?php foreach ($topnav as $t) : ?>
+                                <?php foreach (getTopNav() as $t) : ?>
                                     <li class="nav-item dropdown">
                                         <a class="nav-link dropdown-toggle" href="#" id="NavBarDropdown<?= $t['id'] ?>" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?= $t['name']; ?></a>
                                         <div class="dropdown-menu bg-primary border-cyan py-0" aria-labelledby="NavBarDropdown<?= $t['id'] ?>">
-                                            <?php foreach ($subtopnav as $st) : ?>
+                                            <?php foreach (getSubTopNav() as $st) : ?>
                                                 <?php if ($st['classification_id'] == $t['id']) : ?>
-                                                    <a class="dropdown-item nav-link py-2 my-0" href="<?= base_url(strtolower($t['name']) . "/" . strtolower($st['category'])); ?>"><?= $st['category'] ?></a>
+                                                    <a class="dropdown-item nav-link py-2 my-0" href="<?= base_url('home/category/' . $st['id']); ?>"><?= $st['category'] ?></a>
                                                 <?php endif; ?>
                                             <?php endforeach; ?>
                                         </div>

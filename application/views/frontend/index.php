@@ -3,7 +3,6 @@
           <div class="overlay"></div>
           <div class="container">
                <div class="row">
-
                     <div class="col-md-6 col-sm-12">
                          <div class="home-info">
                               <h1>Kami membuat sesuatu yang dapat bermanfaat.</h1>
@@ -22,7 +21,7 @@
                               </div>
                          </div>
                     </div>
-                    
+
                </div>
           </div>
      </section>
@@ -48,28 +47,28 @@
                          <div class="about-info skill-thumb">
 
                               <strong>Web Design</strong>
-                                   <span class="pull-right"></span>
-                                        <div class="progress">
-                                             <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%;"></div>
-                                        </div>
+                              <span class="pull-right"></span>
+                              <div class="progress">
+                                   <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%;"></div>
+                              </div>
 
                               <strong>Photography / Videgraphy</strong>
-                                   <span class="pull-right"></span>
-                                        <div class="progress">
-                                             <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%;"></div>
-                                        </div>
+                              <span class="pull-right"></span>
+                              <div class="progress">
+                                   <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%;"></div>
+                              </div>
 
                               <strong>Content Creation</strong>
-                                   <span class="pull-right"></span>
-                                        <div class="progress">
-                                             <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%;"></div>
-                                        </div>
+                              <span class="pull-right"></span>
+                              <div class="progress">
+                                   <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%;"></div>
+                              </div>
 
                               <strong>Technopreneurship</strong>
-                                   <span class="pull-right"></span>
-                                        <div class="progress">
-                                             <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%;"></div>
-                                        </div>
+                              <span class="pull-right"></span>
+                              <div class="progress">
+                                   <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%;"></div>
+                              </div>
 
                          </div>
                     </div>
@@ -79,7 +78,7 @@
                               <img src="<?php echo base_url() ?>assets/front_end/images/about-image.jpg" class="img-responsive" alt="">
                          </div>
                     </div>
-                    
+
                </div>
           </div>
      </section>
@@ -169,7 +168,7 @@
                     </div>
 
                     <div class="col-md-8 col-sm-8">
-                        
+
                          <!-- CONTACT FORM HERE -->
                          <form id="contact-form" role="form" action="#" method="post">
                               <div class="col-md-6 col-sm-6">
@@ -209,7 +208,7 @@
 
                     <div class="col-md-4 col-sm-4">
                          <div class="google-map">
-	<!-- How to change your own map point
+                              <!-- How to change your own map point
             1. Go to Google Maps
             2. Click on your location point
             3. Click "Share" and choose "Embed map" tab
@@ -222,5 +221,3 @@
                </div>
           </div>
      </section>
-
-     
