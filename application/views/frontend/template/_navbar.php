@@ -6,7 +6,7 @@
                     <div>
                         <div class="nav-logo show">
                             <a class="" href="<?= base_url('home') ?>">
-                                <img src="<?= base_url() ?>assets/frontend/images/logo.svg" alt="Logo" />
+                                <img src="<?= base_url() ?>assets/frontend/images/techinstate.png" alt="Logo" />
                             </a>
                         </div>
                     </div>
