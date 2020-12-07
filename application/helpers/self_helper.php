@@ -100,3 +100,9 @@ function getCategoryOfArticle($id_article)
     $res = $inc->db->get()->result_array();
     return $res;
 }
+
+function getCommentOfArticle($id_article)
+{
+    $inc = get_instance();
+    return $inc->db->get_where('comment', ['article_id' => $id_article]);
+}

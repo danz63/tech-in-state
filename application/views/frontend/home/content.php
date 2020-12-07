@@ -21,7 +21,6 @@
                                                     <div class="row post-top-meta">
                                                         <div class="col-md-2">
                                                             <div class="text-center">
-                                                                <!-- <img class="author-thumb" src="https://www.gravatar.com/avatar/e56154546cf4be74e393c62d1ae9f9d4?s=250&amp;d=mm&amp;r=x" alt="Sal"> -->
                                                                 <img class="author-thumb" src="<?= base_url('/assets/backend/img/profile/' . getUserById($article['created_by'])['image']); ?>" alt="<?= getUserById($article['created_by'])['name'] ?>">
                                                             </div>
                                                         </div>
@@ -83,12 +82,91 @@
                         </div>
                     </div>
                 </div>
+                <div class="d-block mx-5 mt-5">
+                    <div class="row" data-aos="fade-up">
+                        <div class="col-sm-12">
+                            <div class="card" data-aos="fade-up">
+                                <div class="card-body">
+                                    <h3>Komentar</h3>
+                                    <div class="row">
+                                        <div class="col-lg-8 mb-5 mb-sm-2">
+                                            <div class="divider"></div>
+                                            <div class="comment-widgets">
+                                                <?php if (getCommentOfArticle($article['id'])->num_rows() < 1) : ?>
+                                                    <div class="d-flex flex-row comment-row mt-1">
+                                                        <div class="comment-text w-100 mb-2">
+                                                            <h4 class="font-medium"></h4> <span class="m-b-15 d-block">Belum Ada Komentar </span>
+                                                            <div class="comment-footer"></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="divider"></div>
+                                                <?php endif; ?>
+                                                <!-- Comment Row -->
+                                                <?php foreach (getCommentOfArticle($article['id'])->result_array() as $comment) : ?>
+                                                    <div class="d-flex flex-row comment-row mt-1">
+                                                        <div class="comment-text w-100">
+                                                            <h4 class="font-medium"><?= $comment['created_by']; ?></h4> <span class="m-b-15 d-block"><?= $comment['comment']; ?> </span>
+                                                            <div class="comment-footer"> <span class="text-muted float-right"><?= getDifference($comment['created_at']); ?></span> </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="divider"></div>
+                                                <?php endforeach; ?>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h3>
+                                        Tinggalkan Komentar
+                                    </h3>
+                                    <div class="row">
+                                        <div class="col-lg-8 mb-5 mb-sm-2">
+                                            <div class="row">
+                                                <div class="col-sm-6">
+                                                    <div class="form-group">
+                                                        <input type="text" class="form-control" id="created_by" name="created_by" aria-describedby="created_by" placeholder="Nama">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-sm-12">
+                                                    <div class="form-group">
+                                                        <textarea class="form-control textarea" placeholder="Komentar" name="comment" id="comment"></textarea>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-sm-12">
+                                                    <div class="form-group">
+                                                        <button type="button" class="btn btn-lg btn-dark font-weight-bold mt-3" id="btnSendComment" data-id="<?= $article['id']; ?>" data-value="<?= base_url('home/send_comment') ?>">Kirim Komentar</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <?php $this->view('frontend/template/_footer'); ?>
+        </div>
+        <?php $this->view('frontend/template/_footer'); ?>
+    </div>
+    <div class="modal fade" id="modalSendComment" tabindex="-1" aria-labelledby="ModalSendComment" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body text-center">
+                    <span class="mdi mdi-loading mdi-spin mdi-48px"></span>
+                    <h3>Please Wait</h3>
+                </div>
+            </div>
         </div>
     </div>
     <?php $this->view('frontend/template/_script'); ?>
-
 </body>
 
 </html>

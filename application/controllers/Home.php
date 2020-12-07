@@ -54,6 +54,22 @@ class Home extends CI_Controller
       'title' => "Artikel " . $series['seri'],
       'series' => $this->db->get('series')->result_array()
     ];
+
     $this->load->view('frontend/home/list', $data);
+  }
+
+  public function send_comment()
+  {
+    $data = [
+      'comment' => $this->input->post('comment', true),
+      'created_by' => $this->input->post('created_by', true),
+      'article_id' => $this->input->post('article_id', true),
+      'created_at' => time()
+    ];
+    $this->db->insert('comment', $data);
+    $res = [
+      'status' => $this->db->affected_rows()
+    ];
+    echo json_encode($res);
   }
 }

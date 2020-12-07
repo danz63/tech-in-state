@@ -20,6 +20,7 @@ class M_Home extends CI_Model
         $this->db->where('id', $id);
         $article = $this->db->get('article')->row_array();
         $res = [
+            'id' => $article['id'],
             'title' => $article['title'],
             'content' => $article['content'],
             'category' => $categoryArticle,
